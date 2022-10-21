@@ -11,7 +11,7 @@ import WebKit
 
 class ViewController: UIViewController {
     
-    // https://d304.d2mefast.net/tb/d/a1/akon_sorry_blame_it_on_me_h264_36868.mp4
+    // https://d304.d2mefast.net/tb/d/a1/akon_sorry_blame_it_on_me_h264_36868.mp4 ok
     @IBOutlet weak var downloadButton: UIButton!
     @IBOutlet weak var urlTextField: UITextField!
     @IBOutlet weak var progressView: UIProgressView!
