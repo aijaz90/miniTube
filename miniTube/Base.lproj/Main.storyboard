@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="miniTube" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="P2s-QD-c5U">
+                                <rect key="frame" x="35" y="76" width="344.5" height="34"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter video url" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NZU-Rf-rES">
+                                        <rect key="frame" x="0.0" y="0.0" width="292" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deE-O8-aBL">
+                                        <rect key="frame" x="300" y="1.5" width="44.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.down.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="downloadButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vnk-Fa-npf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="NZU-Rf-rES" firstAttribute="width" secondItem="P2s-QD-c5U" secondAttribute="width" multiplier="0.65" constant="68.150000000000006" id="FBU-Q5-d78"/>
+                                </constraints>
+                            </stackView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QZj-kS-CNf">
+                                <rect key="frame" x="0.0" y="126" width="414" height="4"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRb-EU-RCh">
+                                <rect key="frame" x="188.5" y="138" width="37" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="P2s-QD-c5U" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="0bP-51-TSI"/>
+                            <constraint firstItem="QZj-kS-CNf" firstAttribute="centerX" secondItem="P2s-QD-c5U" secondAttribute="centerX" id="74V-Bg-CX4"/>
+                            <constraint firstItem="QZj-kS-CNf" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Baf-5z-ecy"/>
+                            <constraint firstItem="dRb-EU-RCh" firstAttribute="centerX" secondItem="QZj-kS-CNf" secondAttribute="centerX" id="EyC-39-rgW"/>
+                            <constraint firstItem="P2s-QD-c5U" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.832126" id="KLA-Oo-SL8"/>
+                            <constraint firstItem="dRb-EU-RCh" firstAttribute="top" secondItem="QZj-kS-CNf" secondAttribute="bottom" constant="8" id="SfG-uP-3oM"/>
+                            <constraint firstItem="QZj-kS-CNf" firstAttribute="top" secondItem="P2s-QD-c5U" secondAttribute="bottom" constant="16" id="WLd-Sb-hkX"/>
+                            <constraint firstItem="P2s-QD-c5U" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="juq-6J-Wcq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="downloadButton" destination="deE-O8-aBL" id="nh0-2a-v7Q"/>
+                        <outlet property="downloadErrorLabel" destination="dRb-EU-RCh" id="d5a-cN-cq5"/>
+                        <outlet property="progressView" destination="QZj-kS-CNf" id="8wZ-ba-Ov3"/>
+                        <outlet property="urlTextField" destination="NZU-Rf-rES" id="F8V-Fl-QQm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="86"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="square.and.arrow.down.fill" catalog="system" width="121" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

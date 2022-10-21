@@ -1,0 +1,6 @@
+framework module Pods_miniTube {
+  umbrella header "Pods-miniTube-umbrella.h"
+
+  export *
+  module * { export * }
+}
